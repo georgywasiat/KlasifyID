@@ -1,0 +1,212 @@
+/* Styling Header */
+header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 20px;  /* Sesuaikan padding agar tidak terlalu besar */
+    max-width: 1000px;   /* Batasi lebar maksimal header */
+    margin: 0 auto;      /* Pusatkan header */
+    background-color: #fff;
+    border-bottom: 2px solid #333;
+}
+
+.header-left {
+    flex: 0 1 auto;
+}
+
+.header-right {
+    flex: 1;
+    padding-left: 20px;
+    font-family: 'Times New Roman', Times, serif; /* Ubah menjadi Times New Roman */
+}
+
+.header-right h2 {
+    margin: 0;
+    font-size: 24px;  /* Mengubah ukuran font menjadi 24px */
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif; /* Ubah menjadi Times New Roman */
+}
+
+.header-right p {
+    margin: 5px 0;
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif; /* Ubah menjadi Times New Roman */
+}
+
+
+/* Pengaturan logo */
+.logo {
+    height: 60px;  /* Ukuran logo lebih kecil */
+    margin-right: 15px;  /* Jarak antar logo dan teks */
+}
+
+/* Styling H1 (Judul utama) */
+h1 {
+    font-size: 22px; /* Sesuaikan ukuran font sesuai keinginan */
+    font-weight: bold;
+    text-align: center;
+    margin-top: 4px;  /* Kurangi jarak atas judul */
+    margin-bottom: 4px; /* Kurangi jarak bawah judul */
+}
+
+/* Styling Konten Utama */
+.container {
+    text-align: center;
+    width: 100%;
+    max-width: 1000px;  /* Batasi lebar maksimal konten */
+    margin: 0 auto;     /* Pusatkan konten */
+    padding: 20px;
+}
+
+/* Form styling */
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    text-align: left;
+    width: 100%;
+    max-width: 600px;   /* Batasi lebar form */
+    margin-top: 10px; /* Kurangi jarak atas form */
+}
+
+/* Form Label */
+label {
+    font-weight: bold;
+    color: #333;
+    display: block;
+    margin-bottom: 8px;  /* Jarak antara label dan input */
+}
+
+/* Input dan Select */
+textarea, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    margin-bottom: 16px;         /* Jarak bawah antara elemen */
+    box-sizing: border-box;      /* Pastikan padding tidak memengaruhi lebar */
+    height: 40px;                /* Samakan tinggi select dan textarea */
+}
+
+textarea {
+    height: 100px;  /* Atur tinggi textarea sesuai kebutuhan */
+}
+
+/* Tombol Submit */
+input[type="submit"] {
+    background-color: #808080;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    display: block;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+input[type="submit"]:hover {
+    background-color: #696969;
+}
+
+/* Section Prediksi */
+.prediction-section {
+    margin-top: 20px;
+    text-align: center;
+    color: #808080;
+}
+
+.prediction-section h2 {
+    color: #000000; /* Warna teks hitam */
+    font-family: 'Times New Roman', Times, serif; /* Font Courier New */
+    font-size: 20px; /* Ukuran font, sesuaikan sesuai keinginan */
+    font-weight: bold; /* Membuat teks tebal */
+    text-align: center; /* Teks rata kiri */
+    margin-top: 0; /* Menghilangkan margin atas */
+}
+
+
+/* Loading Spinner */
+.loading {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-top: 4px solid #808080;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 10px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading p {
+    color: #808080;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Styling Prediksi di Dalam Form */
+.prediction-box {
+    margin-top: 20px; /* Jarak antara tombol dan prediksi */
+    padding: 15px;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Prediksi di rata tengah */
+}
+
+.prediction-box h2 {
+    color: #000000;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px; /* Sesuaikan ukuran font */
+    margin: 0;
+    font-weight: bold;
+}
+
+/* Styling untuk pesan error */
+#error-message {
+    color: red;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center; /* Agar teks berada di tengah */
+    margin-top: 1px; /* Berikan sedikit jarak di atas pesan */
+    display: none; /* Awalnya disembunyikan */
+}
+
+/* Styling Background warna tulang */
+body {
+    background-color: #F9F5E3;  /* Warna tulang (bone color) */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #F9F5E3;  /* Samakan warna background dengan body */
+    border-bottom: 2px solid #333;
+}
+
+/* Styling Prediksi di Dalam Form */
+.prediction-box {
+    margin-top: 20px; /* Jarak antara tombol dan prediksi */
+    padding: 10px; /* Sesuaikan padding agar tidak terlalu besar */
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Prediksi di rata tengah */
+    width: 100%;  /* Atur lebar agar sesuai dengan tombol */
+    max-width: 600px; /* Sesuaikan dengan lebar tombol */
+    box-sizing: border-box; /* Pastikan padding tidak memengaruhi lebar */
+}

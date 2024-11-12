@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Classification</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+
+    <!-- Bagian Header -->
+    <header>
+        <div class="header-left">
+            <img src="../static/images/logo undip.png" alt="Logo Undip" class="logo">
+        </div>
+        <div class="header-right">
+            <p>Georgy Banny Rizky Wasiat</p>
+            <p>24060121140103</p>
+            <p>Universitas Diponegoro</p>
+        </div>
+    </header>
+
+    <!-- Konten Utama -->
+    <div class="container">
+        <h1>KLASIFIKASI JAWABAN GENERATIVE AI VERSUS JAWABAN MANUSIA MENGGUNAKAN METODE TF-IDF DAN SUPPORT VECTOR MACHINE</h1>
+        <form method="POST" onsubmit="return validateForm();">
+            <label for="kernel">Pilih Kernel:</label>
+            <select name="kernel" id="kernel">
+                <option value="linear" {% if selected_kernel == 'linear' %}selected{% endif %}>Linear</option>
+                <option value="rbf" {% if selected_kernel == 'rbf' %}selected{% endif %}>RBF</option>
+                <option value="poly" {% if selected_kernel == 'poly' %}selected{% endif %}>Polynomial</option>
+            </select>
+            
+            <label for="text">Masukan Text:</label>
+            <textarea name="text" id="text" rows="5" cols="40">{{ user_input }}</textarea>
+        
+            <!-- Pesan kesalahan jika text kosong -->
+            <p id="error-message" style="color: red; display: none;">Text tidak boleh kosong!</p>
+            
+            <input type="submit" value="Ayo Kita Klasifikasikan!">
+        
+            <!-- Elemen loading -->
+            <div id="loading" class="loading" style="display:none;">
+                <div class="spinner"></div>
+                <p>Loading...</p>
+            </div>
+        
+            <!-- Prediksi ditampilkan di dalam kotak form -->
+            {% if prediction %}
+            <div class="prediction-box">
+                <h2>Prediksi: 
+                    {% if prediction == 'J_MHS' %}
+                        Jawaban Anda Terklasifikasikan Manusia
+                    {% elif prediction == 'J_AI' %}
+                        Jawaban Anda Terklasifikasikan Generative AI
+                    {% else %}
+                        Tidak diketahui
+                    {% endif %}
+                </h2>
+            </div>
+            {% endif %}
+        </form>        
+    </div>
+
+    <!-- JavaScript untuk validasi dan menampilkan animasi loading -->
+    <script>
+        function validateForm() {
+            var textInput = document.getElementById('text').value;
+            var errorMessage = document.getElementById('error-message');
+
+            // Jika textarea kosong, tampilkan pesan error
+            if (textInput.trim() === "") {
+                errorMessage.style.display = 'block'; // Tampilkan pesan error
+                return false; // Cegah form dari pengiriman
+            } else {
+                errorMessage.style.display = 'none'; // Sembunyikan pesan error jika valid
+                showLoading(); // Tampilkan loading jika valid
+                return true; // Lanjutkan pengiriman form
+            }
+        }
+
+        function showLoading() {
+            document.getElementById('loading').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
